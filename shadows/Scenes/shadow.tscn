@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://dpj8t6euto4hh"]
+
+[ext_resource type="Texture2D" uid="uid://v4owcgfkkyir" path="res://Assets/Images/Player/16x32/16x32 Idle-Shade.png" id="2_8pobm"]
+
+[sub_resource type="Gradient" id="Gradient_wjdoq"]
+offsets = PackedFloat32Array(0.31012657, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8pobm"]
+gradient = SubResource("Gradient_wjdoq")
+fill = 1
+fill_from = Vector2(0.507874, 0.47637796)
+fill_to = Vector2(0.8228347, 0.16141732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxdv1"]
+atlas = ExtResource("2_8pobm")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhi63"]
+atlas = ExtResource("2_8pobm")
+region = Rect2(16, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxmrs"]
+atlas = ExtResource("2_8pobm")
+region = Rect2(32, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twoae"]
+atlas = ExtResource("2_8pobm")
+region = Rect2(48, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlsre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxdv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhi63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxmrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhi63")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twoae")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1800369328]
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=472482744]
+modulate = Color(1, 1, 1, 0.6392157)
+texture = SubResource("GradientTexture2D_8pobm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1596936119]
+modulate = Color(1.1480727, 1.1480727, 1.1480727, 1)
+texture_filter = 1
+position = Vector2(0.33333334, -6.3333335)
+sprite_frames = SubResource("SpriteFrames_nlsre")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.01217481
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=592826793]
+polygon = PackedVector2Array(-3, -14, 3, -14, 3.6666667, -12.333334, 3.6666667, -6.3333335, 2.6666667, -3.3333335, 2.3333335, 3.3333335, -0.33333334, 8, -1.3333334, 7.666667, -1.6666667, 5.666667, -2.6666667, 4, -2.3333335, -3.3333335, -4.666667, -6, -4.3333335, -12.333334)

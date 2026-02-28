@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://br2tis5n0r45y"]
+
+[ext_resource type="Script" uid="uid://cj4sobetydoow" path="res://Scripts/ShadeAbility.gd" id="1_nfdgc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23t3j"]
+load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-2c24be1d376ffe9e1a7069b994566761.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nfdgc"]
+atlas = SubResource("CompressedTexture2D_23t3j")
+region = Rect2(0, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eogej"]
+atlas = SubResource("CompressedTexture2D_23t3j")
+region = Rect2(17, 17, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2vd1"]
+atlas = SubResource("CompressedTexture2D_23t3j")
+region = Rect2(34, 17, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bnxt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfdgc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eogej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2vd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2vd1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eogej")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nfdgc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_a4616"]
+radius = 6.0
+
+[sub_resource type="Gradient" id="Gradient_wjdoq"]
+offsets = PackedFloat32Array(0.31012657, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ycokb"]
+gradient = SubResource("Gradient_wjdoq")
+fill = 1
+fill_from = Vector2(0.507874, 0.47637796)
+fill_to = Vector2(0.8228347, 0.16141732)
+
+[node name="DarkCore" type="Area2D" unique_id=1251717183]
+script = ExtResource("1_nfdgc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1047669616]
+z_index = 1
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_bnxt1")
+autoplay = "default"
+frame_progress = 0.5217636
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1975313734]
+shape = SubResource("CircleShape2D_a4616")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=165441909]
+modulate = Color(1, 1, 1, 0.6392157)
+z_index = 1
+scale = Vector2(0.7, 0.7)
+texture = SubResource("GradientTexture2D_ycokb")
