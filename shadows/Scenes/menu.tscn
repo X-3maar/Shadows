@@ -11,7 +11,11 @@
 [ext_resource type="Texture2D" uid="uid://v4owcgfkkyir" path="res://Assets/Images/Player/16x32/16x32 Idle-Shade.png" id="10_7qvly"]
 [ext_resource type="Texture2D" uid="uid://dy4l5k8hujdlr" path="res://Assets/Images/Player/16x32/16x32 Walk-Sheet.png" id="10_8ph6h"]
 [ext_resource type="FontFile" uid="uid://c30ckbimcqe3g" path="res://Assets/Pixelout Personal Use Only.ttf" id="10_rfqti"]
+[ext_resource type="Texture2D" uid="uid://bcq5kgrl8ks7j" path="res://Assets/PNG/Default/Border/panel-border-000.png" id="12_8ph6h"]
 [ext_resource type="FontFile" uid="uid://k2p6af21t3g6" path="res://Assets/Pixels.ttf" id="12_g8i7c"]
+[ext_resource type="Texture2D" uid="uid://bxdcxvkuptq4w" path="res://Assets/PNG/Default/Border/panel-border-005.png" id="13_5ti5v"]
+[ext_resource type="Texture2D" uid="uid://cmp7gna10jaxd" path="res://Assets/Tilemap/tilemap.png" id="15_5ti5v"]
+[ext_resource type="AudioStream" uid="uid://bd4spo7cp7ulj" path="res://Assets/Audio/Menu.mp3" id="16_1by5w"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6swd7"]
 texture = ExtResource("1_wwsa2")
@@ -897,6 +901,81 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_1by5w"]
+atlas = ExtResource("12_8ph6h")
+region = Rect2(32, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kmwmt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1by5w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rc6uw"]
+atlas = ExtResource("12_8ph6h")
+region = Rect2(16, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dldpb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rc6uw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d77ms"]
+atlas = ExtResource("12_8ph6h")
+region = Rect2(0, 0, 16, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3p34a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d77ms")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5ti5v"]
+atlas = ExtResource("15_5ti5v")
+region = Rect2(289, 16, 16, 17)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rc6uw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5ti5v")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dldpb"]
+atlas = ExtResource("15_5ti5v")
+region = Rect2(204, 102, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d77ms"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dldpb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Menu" type="Control" unique_id=427360077]
 layout_mode = 3
 anchors_preset = 15
@@ -1009,6 +1088,43 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 1
 icon_alignment = 1
 
+[node name="1" type="AnimatedSprite2D" parent="CanvasLayer/Play" unique_id=614472185]
+position = Vector2(410, 52)
+scale = Vector2(3, 2.8958333)
+sprite_frames = SubResource("SpriteFrames_kmwmt")
+
+[node name="2" type="AnimatedSprite2D" parent="CanvasLayer/Play" unique_id=475860735]
+position = Vector2(202, 52)
+scale = Vector2(23.124998, 2.8958325)
+sprite_frames = SubResource("SpriteFrames_dldpb")
+
+[node name="3" type="AnimatedSprite2D" parent="CanvasLayer/Play" unique_id=2114787110]
+position = Vector2(5.9999847, 52)
+scale = Vector2(3, 2.896)
+sprite_frames = SubResource("SpriteFrames_3p34a")
+
+[node name="Label2" type="Label" parent="CanvasLayer/Play" unique_id=876914576]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -238.16801
+offset_top = -57.5
+offset_right = 237.83199
+offset_bottom = 57.50003
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 150
+text = "Play"
+horizontal_alignment = 1
+
 [node name="Exit" type="Button" parent="CanvasLayer" unique_id=634688396]
 z_index = 5
 anchors_preset = -1
@@ -1016,15 +1132,25 @@ anchor_left = 0.418
 anchor_top = 0.504
 anchor_right = 0.418
 anchor_bottom = 0.504
-offset_left = -301.536
-offset_top = 116.40799
-offset_right = -211.53601
-offset_bottom = 221.40799
+offset_left = -325.536
+offset_top = 124.40799
+offset_right = -235.53601
+offset_bottom = 219.40799
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Exit" unique_id=675858074]
+position = Vector2(44, 46)
+scale = Vector2(2, 2)
+texture = ExtResource("13_5ti5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Exit" unique_id=1221817271]
+position = Vector2(44.000015, 45)
+scale = Vector2(3.8, 3.8)
+sprite_frames = SubResource("SpriteFrames_rc6uw")
 
 [node name="Settings" type="Button" parent="CanvasLayer" unique_id=1933539584]
 z_index = 5
@@ -1033,15 +1159,25 @@ anchor_left = 0.418
 anchor_top = 0.504
 anchor_right = 0.418
 anchor_bottom = 0.504
-offset_left = 212.46399
-offset_top = 116.40799
-offset_right = 302.464
-offset_bottom = 221.40799
+offset_left = 239.46399
+offset_top = 124.40799
+offset_right = 329.464
+offset_bottom = 216.40799
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Settings" unique_id=1371982639]
+position = Vector2(44, 46)
+scale = Vector2(2, 2)
+texture = ExtResource("13_5ti5v")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/Settings" unique_id=1738836981]
+position = Vector2(44, 46)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_d77ms")
 
 [node name="Rights" type="Label" parent="CanvasLayer" unique_id=1915311055]
 z_index = 4
@@ -1051,8 +1187,8 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -665.0
 offset_top = 611.0
-offset_right = -95.0
-offset_bottom = 726.0
+offset_right = -357.0
+offset_bottom = 649.0
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 3
@@ -1061,6 +1197,11 @@ theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("12_g8i7c")
 theme_override_font_sizes/font_size = 35
 text = "© 2026 3maar. Do not distribute!"
+
+[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=755134477]
+stream = ExtResource("16_1by5w")
+autoplay = true
+bus = &"BGM"
 
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]

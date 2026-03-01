@@ -15,6 +15,10 @@ run/main_scene="uid://p8se5tccphks"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://do88u8t1c8w7l"
+
 [dotnet]
 
 project/assembly_name="Shadows"
