@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d050atj1gkvnl"]
+
+[ext_resource type="AudioStream" uid="uid://d3poykfxvpdan" path="res://Assets/Audio/BGM.mp3" id="1_jijru"]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" unique_id=79783]
+stream = ExtResource("1_jijru")
+bus = &"BGM"

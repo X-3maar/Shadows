@@ -5,7 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://ddfmmvown5f1f" path="res://Assets/Images/Tilemap/Dungeon Tile Set.png" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://dpj8t6euto4hh" path="res://Scenes/shadow.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://7oti8wmux6jn" path="res://Scenes/kill_zone.tscn" id="4_kry3j"]
+[ext_resource type="FontFile" uid="uid://k2p6af21t3g6" path="res://Assets/Pixels.ttf" id="7_6bp64"]
 [ext_resource type="PackedScene" uid="uid://br2tis5n0r45y" path="res://Scenes/dark_core.tscn" id="7_344ge"]
+[ext_resource type="Texture2D" uid="uid://bxdcxvkuptq4w" path="res://Assets/PNG/Default/Border/panel-border-005.png" id="8_ynf5e"]
+[ext_resource type="Texture2D" uid="uid://cmp7gna10jaxd" path="res://Assets/Tilemap/tilemap.png" id="9_hptm8"]
+[ext_resource type="Texture2D" uid="uid://bcq5kgrl8ks7j" path="res://Assets/PNG/Default/Border/panel-border-000.png" id="10_hptm8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_21xkr"]
 texture = ExtResource("3_8gbba")
@@ -982,6 +986,155 @@ size = Vector2(444, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hptm8"]
 size = Vector2(9, 46)
 
+[sub_resource type="Animation" id="Animation_6bp64"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_344ge"]
+resource_name = "fade"
+length = 1.4333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33333337, 1.3666667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ynf5e"]
+_data = {
+&"RESET": SubResource("Animation_6bp64"),
+&"fade": SubResource("Animation_344ge")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1ilt"]
+atlas = ExtResource("9_hptm8")
+region = Rect2(51, 100, 17, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1ilt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1ilt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv72t"]
+atlas = ExtResource("10_hptm8")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6iyac"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv72t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6lvq"]
+atlas = ExtResource("10_hptm8")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fdnlq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6lvq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsu2k"]
+atlas = ExtResource("9_hptm8")
+region = Rect2(204, 68, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k12tt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wsu2k")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6iyac"]
+atlas = ExtResource("9_hptm8")
+region = Rect2(255, 17, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jkdf5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6iyac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_hptm8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_d1ilt"]
+resource_name = "start"
+length = 2.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.79, 2.0333333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6iyac"]
+_data = {
+&"RESET": SubResource("Animation_hptm8"),
+&"start": SubResource("Animation_d1ilt")
+}
+
 [node name="main" type="Node2D" unique_id=1035466203]
 
 [node name="Node" type="Node" parent="." unique_id=1095678618]
@@ -1050,4 +1203,183 @@ shape = SubResource("RectangleShape2D_hptm8")
 [node name="DarkCore" parent="." unique_id=1251717183 instance=ExtResource("7_344ge")]
 position = Vector2(261, -333)
 
+[node name="animation" type="AnimationPlayer" parent="." unique_id=578603552]
+root_node = NodePath("../Label")
+libraries/ = SubResource("AnimationLibrary_ynf5e")
+
+[node name="Label" type="Label" parent="." unique_id=1619783099]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+texture_filter = 1
+offset_left = 334.0
+offset_top = -360.0
+offset_right = 454.0
+offset_bottom = -328.0
+theme_override_colors/font_color = Color(18.892157, 18.892157, 18.892157, 1)
+theme_override_fonts/font = ExtResource("7_6bp64")
+theme_override_font_sizes/font_size = 32
+text = "Press Enter."
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1395605394]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1525763070]
+z_index = -3
+offset_right = 1187.0
+offset_bottom = 663.0
+color = Color(0, 0, 0, 1)
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=1875973360]
+z_index = 5
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.708
+anchor_right = 0.409
+anchor_bottom = 0.708
+offset_left = -424.168
+offset_top = -418.784
+offset_right = -382.168
+offset_bottom = -376.784
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Back" unique_id=1749505033]
+position = Vector2(20.99999, 20.999994)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_ynf5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Back" unique_id=1851131650]
+position = Vector2(22, 20.999985)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_d1ilt")
+
+[node name="pause" type="ColorRect" parent="CanvasLayer" unique_id=225444922]
+visible = false
+anchors_preset = -1
+anchor_left = 0.42200002
+anchor_top = 0.57900006
+anchor_right = 0.42200002
+anchor_bottom = 0.57900006
+offset_left = -56.144012
+offset_top = -87.19205
+offset_right = 259.856
+offset_bottom = -1.1920471
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.47058824)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1206499610]
+position = Vector2(310, 6)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6iyac")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1911950264]
+position = Vector2(310, 52.000008)
+scale = Vector2(3, 2.9999995)
+sprite_frames = SubResource("SpriteFrames_fdnlq")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1012790589]
+position = Vector2(-12, 50.499992)
+scale = Vector2(3, 3.0624983)
+sprite_frames = SubResource("SpriteFrames_fdnlq")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1426537638]
+position = Vector2(156.70398, 80)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_fdnlq")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=377767485]
+position = Vector2(159.99998, -12)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_fdnlq")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=822587494]
+position = Vector2(310, 80.00009)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6iyac")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1463505235]
+position = Vector2(6, 80)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6iyac")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/pause" unique_id=1279627448]
+position = Vector2(6, 6)
+rotation = 4.712389
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_6iyac")
+
+[node name="Back3" type="Button" parent="CanvasLayer/pause" unique_id=1845258243]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.708
+anchor_right = 0.409
+anchor_bottom = 0.708
+offset_left = 87.756
+offset_top = -38.888
+offset_right = 129.756
+offset_bottom = 3.1119995
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/pause/Back3" unique_id=333483972]
+position = Vector2(20.99999, 20.999994)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_ynf5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/pause/Back3" unique_id=1024065755]
+position = Vector2(22, 20.999985)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_k12tt")
+
+[node name="Back2" type="Button" parent="CanvasLayer/pause" unique_id=328028360]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.708
+anchor_right = 0.409
+anchor_bottom = 0.708
+offset_left = -73.244
+offset_top = -38.888
+offset_right = -31.244003
+offset_bottom = 3.1119995
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/pause/Back2" unique_id=1910069877]
+position = Vector2(20.99999, 20.999994)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("8_ynf5e")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/pause/Back2" unique_id=2129106171]
+position = Vector2(22, 20.999985)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_jkdf5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer" unique_id=1008414901]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_6iyac")
+autoplay = &"start"
+
 [connection signal="body_entered" from="VoidKillZone" to="Player" method="_on_kill_zone_body_entered"]
+[connection signal="pressed" from="CanvasLayer/Back" to="Player" method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/Back3" to="Player" method="_on_back_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/pause/Back2" to="Player" method="_on_back_2_pressed"]

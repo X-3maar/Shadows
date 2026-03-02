@@ -1,5 +1,6 @@
 extends CharacterBody2D
-
+@onready var back: Button = $"../CanvasLayer/Back"
+@onready var pause: ColorRect = $"../CanvasLayer/pause"
 
 const SPEED = 150.0
 const JUMP_VELOCITY = -290.0
@@ -7,9 +8,10 @@ const JUMP_VELOCITY = -290.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+	
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -42,4 +44,34 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("run")
 		elif direction == 0 && is_on_floor():
 			animated_sprite_2d.play("idle")
+	if Input.is_action_just_pressed("escape"):
+			pause.show()
+			Engine.time_scale = 0.0
+			back.hide()
+	if Input.is_action_just_pressed("continue"):
+			pause.hide()
+			Engine.time_scale = 1.0
+			back.show()
 	move_and_slide()
+
+
+func _on_back_pressed() -> void:
+	Engine.time_scale = 0.0
+	pause.show()
+	back.hide()
+	pass # Replace with function body.
+
+
+func _on_back_3_pressed() -> void:
+	Engine.time_scale = 1.0
+	pause.hide()
+	back.show()
+	pass # Replace with function body.
+
+
+
+func _on_back_2_pressed() -> void:
+	Engine.time_scale = 1.0
+	get_tree().change_scene_to_file("res://Scenes/menu.tscn")
+	
+	pass # Replace with function body.

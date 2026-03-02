@@ -976,6 +976,51 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qv72t"]
+atlas = ExtResource("12_8ph6h")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1by5w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qv72t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6lvq"]
+atlas = ExtResource("12_8ph6h")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_owyel"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d6lvq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsbv2"]
+atlas = ExtResource("15_5ti5v")
+region = Rect2(272, 0, 17, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h63v2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsbv2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
 [node name="Menu" type="Control" unique_id=427360077]
 layout_mode = 3
 anchors_preset = 15
@@ -1198,7 +1243,193 @@ theme_override_fonts/font = ExtResource("12_g8i7c")
 theme_override_font_sizes/font_size = 35
 text = "© 2026 3maar. Do not distribute!"
 
-[node name="Music" type="AudioStreamPlayer2D" parent="." unique_id=755134477]
+[node name="SettingsGroup" type="Node" parent="CanvasLayer" unique_id=545632682]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/SettingsGroup" unique_id=292036839]
+visible = false
+anchors_preset = -1
+anchor_left = 0.42200002
+anchor_top = 0.57900006
+anchor_right = 0.42200002
+anchor_bottom = 0.57900006
+offset_left = -167.14401
+offset_top = -138.19205
+offset_right = 148.85599
+offset_bottom = 124.80795
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.47058824)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=2132934501]
+position = Vector2(310, 6)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=2103222130]
+position = Vector2(310, 133)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=1594223622]
+position = Vector2(-12, 131)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=472085742]
+position = Vector2(156.70396, 257)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=805790882]
+position = Vector2(159.99998, -12)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=355322151]
+position = Vector2(310, 257)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=1093020924]
+position = Vector2(6, 257)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/ColorRect" unique_id=1513018066]
+position = Vector2(6, 6)
+rotation = 4.712389
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="Back" type="Button" parent="CanvasLayer/SettingsGroup" unique_id=968162570]
+visible = false
+z_index = 5
+anchors_preset = -1
+anchor_left = 0.409
+anchor_top = 0.708
+anchor_right = 0.409
+anchor_bottom = 0.708
+offset_left = -16.168
+offset_top = -20.783997
+offset_right = 25.832
+offset_bottom = 21.216003
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SettingsGroup/Back" unique_id=1814619541]
+position = Vector2(20.99999, 20.999994)
+scale = Vector2(0.9, 0.9)
+texture = ExtResource("13_5ti5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/SettingsGroup/Back" unique_id=1033065938]
+position = Vector2(22, 20.999985)
+scale = Vector2(1.7, 1.7)
+sprite_frames = SubResource("SpriteFrames_h63v2")
+
+[node name="options" type="HSlider" parent="CanvasLayer/SettingsGroup" unique_id=1628721150]
+visible = false
+offset_left = 345.0
+offset_top = 279.0
+offset_right = 608.0
+offset_bottom = 320.0
+min_value = -17.0
+max_value = 17.0
+ticks_position = 3
+
+[node name="HSlider2" type="HSlider" parent="CanvasLayer/SettingsGroup/options" unique_id=1145250201]
+layout_mode = 0
+offset_top = 51.0
+offset_right = 263.0
+offset_bottom = 92.0
+min_value = -17.0
+max_value = 17.0
+ticks_position = 3
+
+[node name="HSlider3" type="HSlider" parent="CanvasLayer/SettingsGroup/options" unique_id=619326659]
+layout_mode = 0
+offset_top = 106.0
+offset_right = 263.0
+offset_bottom = 147.0
+min_value = -17.0
+max_value = 17.0
+ticks_position = 3
+
+[node name="Label2" type="Label" parent="CanvasLayer/SettingsGroup/options" unique_id=1701343930]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -259.974
+offset_top = -37.3
+offset_right = 275.026
+offset_bottom = -7.3
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 40
+text = "master volume"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="CanvasLayer/SettingsGroup/options" unique_id=434649398]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -259.974
+offset_top = 15.7
+offset_right = 275.026
+offset_bottom = 45.7
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 40
+text = "SFX"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="CanvasLayer/SettingsGroup/options" unique_id=1944313657]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -259.974
+offset_top = 69.7
+offset_right = 275.026
+offset_bottom = 99.7
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 40
+text = "Background music"
+horizontal_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=242463901]
+position = Vector2(721, 451)
 stream = ExtResource("16_1by5w")
 autoplay = true
 bus = &"BGM"
@@ -1206,3 +1437,7 @@ bus = &"BGM"
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/SettingsGroup/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsGroup/options" to="." method="_on_options_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsGroup/options/HSlider2" to="." method="_on_h_slider_2_value_changed"]
+[connection signal="value_changed" from="CanvasLayer/SettingsGroup/options/HSlider3" to="." method="_on_h_slider_3_value_changed"]

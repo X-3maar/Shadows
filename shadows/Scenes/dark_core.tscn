@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://br2tis5n0r45y"]
 
 [ext_resource type="Script" uid="uid://cj4sobetydoow" path="res://Scripts/ShadeAbility.gd" id="1_nfdgc"]
+[ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_nfdgc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23t3j"]
 load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-2c24be1d376ffe9e1a7069b994566761.ctex"
@@ -56,6 +57,114 @@ fill = 1
 fill_from = Vector2(0.507874, 0.47637796)
 fill_to = Vector2(0.8228347, 0.16141732)
 
+[sub_resource type="Animation" id="Animation_nfdgc"]
+resource_name = "Disapperaing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6392157), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -15)]
+}
+
+[sub_resource type="Animation" id="Animation_eogej"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0.6392157)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Sprite2D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h2vd1"]
+_data = {
+&"Disapperaing": SubResource("Animation_nfdgc"),
+&"RESET": SubResource("Animation_eogej")
+}
+
 [node name="DarkCore" type="Area2D" unique_id=1251717183]
 script = ExtResource("1_nfdgc")
 
@@ -74,3 +183,12 @@ modulate = Color(1, 1, 1, 0.6392157)
 z_index = 1
 scale = Vector2(0.7, 0.7)
 texture = SubResource("GradientTexture2D_ycokb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=853794156]
+stream = ExtResource("2_nfdgc")
+volume_db = 11.085
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1393909201]
+libraries/ = SubResource("AnimationLibrary_h2vd1")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
