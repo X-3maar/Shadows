@@ -23,6 +23,10 @@ buses/default_bus_layout="uid://do88u8t1c8w7l"
 
 Bgm="*uid://d050atj1gkvnl"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Shadows"
