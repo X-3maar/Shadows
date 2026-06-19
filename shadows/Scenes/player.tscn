@@ -73,6 +73,10 @@ region = Rect2(64, 64, 16, 32)
 atlas = ExtResource("3_x3wgy")
 region = Rect2(80, 64, 16, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfarp"]
+atlas = ExtResource("2_x3wgy")
+region = Rect2(128, 256, 16, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bi64h"]
 atlas = ExtResource("4_3smsa")
 region = Rect2(0, 64, 16, 32)
@@ -169,6 +173,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vfarp")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_bi64h")
 }, {
 "duration": 1.0,
@@ -193,7 +205,7 @@ script = ExtResource("1_fkybt")
 texture_filter = 1
 position = Vector2(0.33333334, -6.3333335)
 sprite_frames = SubResource("SpriteFrames_nlsre")
-animation = &"dash"
+animation = &"slide"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1704768942]

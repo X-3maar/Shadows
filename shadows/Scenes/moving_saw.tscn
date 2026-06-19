@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c6h8f23giapmm"]
+
+[ext_resource type="Texture2D" uid="uid://ddfmmvown5f1f" path="res://Assets/Images/Tilemap/Dungeon Tile Set.png" id="2_f88v5"]
+
+[sub_resource type="GDScript" id="GDScript_t8aar"]
+script/source = "extends AnimatableBody2D
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ww7b7"]
+atlas = ExtResource("2_f88v5")
+region = Rect2(162, 240, 46, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dop6q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ww7b7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="moving_saw" type="AnimatableBody2D" unique_id=1681837499]
+script = SubResource("GDScript_t8aar")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=28969011]
+sprite_frames = SubResource("SpriteFrames_dop6q")

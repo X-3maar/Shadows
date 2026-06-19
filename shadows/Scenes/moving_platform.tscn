@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bwr6xqovmgvy6"]
+
+[ext_resource type="Texture2D" uid="uid://ddfmmvown5f1f" path="res://Assets/Images/Tilemap/Dungeon Tile Set.png" id="1_vvyo4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_anqd2"]
+size = Vector2(46, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdwu5"]
+atlas = ExtResource("1_vvyo4")
+region = Rect2(0, 144, 80, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0773j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdwu5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=1470368254]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1789818979]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_anqd2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=236370922]
+sprite_frames = SubResource("SpriteFrames_0773j")
+frame_progress = 0.20984119
