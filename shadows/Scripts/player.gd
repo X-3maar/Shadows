@@ -24,7 +24,7 @@ func _physics_process(delta: float) -> void:
 	
 	if not is_on_floor() and is_on_wall() and Global.wall:
 		velocity += get_gravity() * delta 
-		if is_on_wall() and velocity.y > 0:
+		if is_on_wall() and velocity.y > 0 and (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")):
 			velocity.y = min(velocity.y,85)
 		if Input.is_action_pressed("move_right"):
 			animated_sprite_2d.play("slide")
@@ -96,10 +96,6 @@ func _physics_process(delta: float) -> void:
 		pause.hide()
 		Engine.time_scale = 1.0
 		back.show()
-	if Input.is_action_just_pressed("ui_text_backspace"):
-		get_tree().change_scene_to_file("res://Scenes/menu.tscn")
-		Bgm.stop()
-		Engine.time_scale = 1.0
 	if Input.is_action_just_pressed("Map") and !Global.map and ! animation.is_playing():
 		animation.play("mapin")
 		Global.map = true
@@ -133,3 +129,8 @@ func _on_back_2_pressed() -> void:
 
 func _on_checkpoint_body_entered(body: Node2D) -> void:
 	Global.dash = true
+
+
+func _on_checkpoint_1_body_entered(body: Node2D) -> void:
+	Global.dash = true
+	Global.wall = true

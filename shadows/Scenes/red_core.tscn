@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cx58p1sg7nl4d"]
 
-[ext_resource type="Script" uid="uid://ccltq0oe2ahwt" path="res://Scenes/WallAbility.gd" id="1_3fgbh"]
+[ext_resource type="Script" uid="uid://ccltq0oe2ahwt" path="res://Scripts/WallAbility.gd" id="1_3fgbh"]
 [ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_n023d"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23t3j"]

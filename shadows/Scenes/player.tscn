@@ -205,7 +205,7 @@ script = ExtResource("1_fkybt")
 texture_filter = 1
 position = Vector2(0.33333334, -6.3333335)
 sprite_frames = SubResource("SpriteFrames_nlsre")
-animation = &"slide"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1704768942]

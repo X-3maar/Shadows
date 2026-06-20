@@ -1207,6 +1207,9 @@ _data = {
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1x0xh"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vwkqt"]
+size = Vector2(45.5, 12)
+
 [node name="main" type="Node2D" unique_id=1035466203]
 
 [node name="Node" type="Node" parent="." unique_id=1095678618]
@@ -1561,6 +1564,16 @@ collision_mask = 3
 z_index = 1
 position = Vector2(-2, 5)
 shape = SubResource("CircleShape2D_1x0xh")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2134237525]
+position = Vector2(35, 98)
+collision_layer = 3
+collision_mask = 3
+
+[node name="Barrier2" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1687580344]
+z_index = 1
+position = Vector2(-122, -140)
+shape = SubResource("RectangleShape2D_vwkqt")
 
 [node name="RedCore" parent="." unique_id=1251717183 instance=ExtResource("9_h3ll2")]
 modulate = Color(0.99215686, 0, 0, 1)
