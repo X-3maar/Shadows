@@ -30,14 +30,14 @@ func _physics_process(delta: float) -> void:
 			animated_sprite_2d.play("slide")
 			animated_sprite_2d.flip_h = false
 			if Input.is_action_just_pressed("jump"):
-				velocity.x = JUMP_VELOCITY - 200
-				velocity.y = JUMP_VELOCITY
+				velocity.x = JUMP_VELOCITY - 150
+				velocity.y = JUMP_VELOCITY -50
 		elif Input.is_action_pressed("move_left"):
 			animated_sprite_2d.play("slide")
 			animated_sprite_2d.flip_h = true
 			if Input.is_action_just_pressed("jump"):
-				velocity.x = -JUMP_VELOCITY + 200
-				velocity.y = JUMP_VELOCITY
+				velocity.x = -JUMP_VELOCITY + 150
+				velocity.y = JUMP_VELOCITY -50
 	elif not is_on_floor():
 		velocity += get_gravity() * delta
 		

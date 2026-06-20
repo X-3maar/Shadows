@@ -10,3 +10,4 @@ func _on_body_entered(body: Node2D) -> void:
 func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
 	Global.dash = false
+	Global.wall = false
