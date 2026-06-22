@@ -1,11 +1,12 @@
 extends CharacterBody2D
-
+@onready var camera_2d_2: Camera2D = $Camera2D2
 @onready var back: Button = $"../CanvasLayer/Back"
 @onready var pause: ColorRect = $"../CanvasLayer/pause"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_polygon_2d: CollisionPolygon2D = $CollisionPolygon2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var animation: AnimationPlayer = $"../animation"
+@onready var shade: CharacterBody2D = $"../shade"
 
 var delay_timer = 0.0
 var SPEED = 150.0
@@ -15,13 +16,26 @@ var dash_timer = 0.0
 var dashed = false
 
 func _physics_process(delta: float) -> void:
-	
+	if !Bgm.playing:
+		Bgm.play()
+	camera_2d_2.make_current()
+	if process_mode == PROCESS_MODE_DISABLED:
+		return
+	if Global.cnswitch and Global.switch and Input.is_action_just_pressed("Switch"):
+		Global.temp = true
+		shade.set_deferred("process_mode", PROCESS_MODE_INHERIT)
+
+		shade.show()
+		shade.global_position = global_position
+		hide()
+		set_deferred("process_mode", PROCESS_MODE_DISABLED)
+		return
+
 	if dash_timer > 0:
 		dash_timer -= delta
 	
 	if delay_timer > 0:
 		delay_timer -= delta
-	
 	if not is_on_floor() and is_on_wall() and Global.wall:
 		velocity += get_gravity() * delta 
 		if is_on_wall() and velocity.y > 0 and (Input.is_action_pressed("move_left") or Input.is_action_pressed("move_right")):
@@ -40,6 +54,9 @@ func _physics_process(delta: float) -> void:
 				velocity.y = JUMP_VELOCITY -50
 	elif not is_on_floor():
 		velocity += get_gravity() * delta
+		if Global.jump and Input.is_action_just_pressed("jump"):
+			velocity.y = JUMP_VELOCITY
+			Global.jump = false
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -98,6 +115,7 @@ func _physics_process(delta: float) -> void:
 		back.show()
 	if Input.is_action_just_pressed("Map") and !Global.map and ! animation.is_playing():
 		animation.play("mapin")
+		Global.switch = false
 		Global.map = true
 		SPEED = 0
 		JUMP_VELOCITY = 0
@@ -109,7 +127,10 @@ func _physics_process(delta: float) -> void:
 		SPEED = 150
 		JUMP_VELOCITY = -290
 		Engine.time_scale = 1.0
-	move_and_slide()
+		await animation.animation_finished
+		Global.switch = true
+	if process_mode == PROCESS_MODE_INHERIT:
+		move_and_slide()
 
 func _on_back_pressed() -> void:
 	Engine.time_scale = 0.0
@@ -134,3 +155,14 @@ func _on_checkpoint_body_entered(body: Node2D) -> void:
 func _on_checkpoint_1_body_entered(body: Node2D) -> void:
 	Global.dash = true
 	Global.wall = true
+
+
+func _on_checkpoint_2_body_entered(body: Node2D) -> void:
+	Global.dash = false
+	Global.wall = true
+
+
+func _on_checkpoint_3_body_entered(body: Node2D) -> void:
+	Global.dash = true
+	Global.wall = true
+	Global.cnswitch = true

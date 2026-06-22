@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dpj8t6euto4hh"]
 
 [ext_resource type="Texture2D" uid="uid://v4owcgfkkyir" path="res://Assets/Images/Player/16x32/16x32 Idle-Shade.png" id="2_8pobm"]
+[ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_rxdv1"]
 
 [sub_resource type="Gradient" id="Gradient_wjdoq"]
 offsets = PackedFloat32Array(0.31012657, 1)
@@ -71,3 +72,7 @@ frame_progress = 0.01217481
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=592826793]
 polygon = PackedVector2Array(-3, -14, 3, -14, 3.6666667, -12.333334, 3.6666667, -6.3333335, 2.6666667, -3.3333335, 2.3333335, 3.3333335, -0.33333334, 8, -1.3333334, 7.666667, -1.6666667, 5.666667, -2.6666667, 4, -2.3333335, -3.3333335, -4.666667, -6, -4.3333335, -12.333334)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1822736585]
+stream = ExtResource("2_rxdv1")
+volume_db = 11.085

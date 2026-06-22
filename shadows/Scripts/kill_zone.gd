@@ -3,6 +3,7 @@ extends Area2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 func _on_body_entered(body: Node2D) -> void:
 	timer.start()
+	Global.keys = 0
 	body.modulate = Color(1.0, 0.0-91, 0.059, 0.757)
 	body.velocity = Vector2.ZERO
 	audio_stream_player_2d.play()
@@ -11,3 +12,5 @@ func _on_timer_timeout() -> void:
 	get_tree().reload_current_scene()
 	Global.dash = false
 	Global.wall = false
+	Global.jump = false
+	Global.cnswitch = false

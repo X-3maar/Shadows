@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cx58p1sg7nl4d"]
+[gd_scene format=3 uid="uid://diat6r8yvu67e"]
 
-[ext_resource type="Script" uid="uid://ccltq0oe2ahwt" path="res://Scripts/WallAbility.gd" id="1_3fgbh"]
-[ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_n023d"]
+[ext_resource type="Script" uid="uid://dn3kxm6as0qu0" path="res://Scripts/JumpAbility.gd" id="1_xrv7t"]
+[ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_8q4xp"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_23t3j"]
 load_path = "res://.godot/imported/monochrome_tilemap_transparent.png-2c24be1d376ffe9e1a7069b994566761.ctex"
@@ -165,12 +165,11 @@ _data = {
 &"RESET": SubResource("Animation_eogej")
 }
 
-[node name="RedCore" type="Area2D" unique_id=1251717183]
-modulate = Color(1, 0, 0, 1)
-script = ExtResource("1_3fgbh")
+[node name="GreenCore" type="Area2D" unique_id=1251717183]
+modulate = Color(0, 1, 0, 1)
+script = ExtResource("1_xrv7t")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1047669616]
-self_modulate = Color(1, 0, 0, 1)
 z_index = 1
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_bnxt1")
@@ -187,7 +186,7 @@ scale = Vector2(0.7, 0.7)
 texture = SubResource("GradientTexture2D_ycokb")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=853794156]
-stream = ExtResource("2_n023d")
+stream = ExtResource("2_8q4xp")
 volume_db = 11.085
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1393909201]

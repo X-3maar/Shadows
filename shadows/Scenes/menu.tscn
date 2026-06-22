@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://bxdcxvkuptq4w" path="res://Assets/PNG/Default/Border/panel-border-005.png" id="13_5ti5v"]
 [ext_resource type="Texture2D" uid="uid://cmp7gna10jaxd" path="res://Assets/Tilemap/tilemap.png" id="15_5ti5v"]
 [ext_resource type="AudioStream" uid="uid://bd4spo7cp7ulj" path="res://Assets/Audio/Menu.mp3" id="16_1by5w"]
+[ext_resource type="Texture2D" uid="uid://d15pfo6dhf383" path="res://Assets/Images/Tilemap/monochrome_tilemap_transparent.png" id="16_kmwmt"]
+[ext_resource type="FontFile" uid="uid://bgriva1lp15ch" path="res://Assets/DePixelBreitFett.ttf" id="17_rc6uw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6swd7"]
 texture = ExtResource("1_wwsa2")
@@ -950,11 +952,54 @@ animations = [{
 atlas = ExtResource("15_5ti5v")
 region = Rect2(289, 16, 16, 17)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3p34a"]
+atlas = ExtResource("16_kmwmt")
+region = Rect2(119, 51, 16, 16)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_rc6uw"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ti5v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p34a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_l6llh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p34a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ocger"]
+atlas = ExtResource("16_kmwmt")
+region = Rect2(289, 34, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i37ye"]
+atlas = ExtResource("16_kmwmt")
+region = Rect2(306, 34, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jbv25"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ocger")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i37ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3p34a")
 }],
 "loop": true,
 "name": &"default",
@@ -1034,11 +1079,11 @@ script = ExtResource("1_rfqti")
 
 [node name="BG" type="TileMapLayer" parent="Node" unique_id=1028396108]
 z_index = 2
-tile_map_data = PackedByteArray("AAD3//7/AAAGAAUAAAD4//7/AAACAAYAAAD5//7/AAACAAYAAAD6//7/AAACAAYAAAD7//7/AAACAAYAAAD8//7/AAACAAYAAAD8////AAACAAYAAAD7////AAACAAYAAAD6////AAACAAYAAAD5////AAACAAYAAAD4////AAACAAYAAAD3////AAACAAYAAAD3/wAAAAACAAYAAAD3/wEAAAACAAYAAAD4/wEAAAACAAYAAAD4/wIAAAACAAYAAAD4/wMAAAACAAYAAAD3/wMAAAACAAYAAAD3/wIAAAACAAYAAAD4/wAAAAACAAYAAAD5/wAAAAACAAYAAAD6/wAAAAACAAYAAAD7/wAAAAACAAYAAAD8/wAAAAACAAYAAAD8/wEAAAACAAYAAAD5/wMAAAACAAYAAAD5/wIAAAACAAYAAAD5/wEAAAACAAYAAAD6/wEAAAACAAYAAAD7/wEAAAACAAYAAAD6/wIAAAACAAYAAAD1//3/AAACAAYAAAD1//7/AAACAAYAAAD1////AAACAAYAAAD1/wAAAAACAAYAAAD1/wEAAAACAAYAAAD1/wIAAAACAAYAAAD1/wMAAAACAAYAAAD1/wQAAAACAAYAAAD6/wMAAAACAAIAAAD7/wMAAAACAAIAAAD8/wMAAAACAAYAAAD7/wIAAAACAAIAAAD8/wIAAQARAAIAAAA=")
+tile_map_data = PackedByteArray("AAD3//7/AAAMAA4AAAD5//7/AAACAAYAAAD6//7/AAACAAYAAAD7//7/AAACAAYAAAD8//7/AAACAAYAAAD8////AAACAAYAAAD7////AAACAAYAAAD6////AAACAAYAAAD5////AAACAAYAAAD4////AAACAAYAAAD3////AAACAAYAAAD3/wAAAAACAAYAAAD3/wEAAAACAAYAAAD4/wEAAAACAAYAAAD4/wIAAAACAAYAAAD4/wMAAAADAA4AAAD3/wMAAAACAA4AAAD3/wIAAAACAAYAAAD4/wAAAAACAAYAAAD5/wAAAAACAAYAAAD6/wAAAAACAAYAAAD7/wAAAAACAAYAAAD8/wAAAAACAAYAAAD8/wEAAAACAAYAAAD5/wMAAAAEAA4AAAD5/wIAAAACAAYAAAD5/wEAAAACAAYAAAD6/wEAAAACAAYAAAD7/wEAAAACAAYAAAD6/wIAAAACAAYAAAD1//3/AAACAAYAAAD1//7/AAACAAYAAAD1////AAACAAYAAAD1/wAAAAACAAYAAAD1/wEAAAACAAYAAAD1/wIAAAACAAYAAAD1/wMAAAACAAYAAAD1/wQAAAACAAYAAAD6/wMAAAAFAA4AAAD7/wMAAAAGAA4AAAD8/wMAAAADAA4AAAD7/wIAAAACAAIAAAD8/wIAAQARAAIAAAD4//7/AAANAA4AAAA=")
 tile_set = SubResource("TileSet_g8i7c")
 
 [node name="Elements" type="TileMapLayer" parent="Node" unique_id=5621190]
-tile_map_data = PackedByteArray("AAD2//3/AAADAAcAAAD2//7/AAADAAIAAAD2////AAADAAIAAAD4/wQAAAACAAEAAAD5/wQAAAACAAEAAAD6/wQAAAACAAEAAAD7/wQAAAACAAEAAAD8/wQAAAACAAEAAAD8//3/AAACAAMAAAD7//3/AAACAAMAAAD6//3/AAACAAMAAAD5//3/AAACAAMAAAD4//3/AAACAAMAAAD3//3/AAACAAMAAAD2/wAAAAADAAIAAAD2/wEAAAADAAIAAAD2/wIAAAADAAIAAAD2/wMAAAADAAIAAAD2/wQAAAADAAUAAAD3/wQAAAACAAEAAAD9//3/AwALAAgAADD9//7/AwALAAYAAAD9////AwALAAYAAAD9/wAAAwALAAYAAAD9/wEAAwALAAYAAAD9/wIAAwALAAYAAAD9/wMAAwALAAYAAAD9/wQAAwALAAgAAAD+//3/AwALAAgAADD+//7/AwALAAYAAAD+////AwALAAYAAAD+/wAAAwALAAYAAAD+/wEAAwALAAYAAAD+/wIAAwALAAYAAAD+/wMAAwALAAYAAAD+/wQAAwALAAgAAAD///3/AwALAAgAADD///7/AwALAAYAAAD/////AwALAAYAAAD//wAAAwALAAYAAAD//wEAAwALAAYAAAD//wIAAwALAAYAAAD//wMAAwALAAYAAAD//wQAAwALAAgAAAAAAP3/AwALAAgAADAAAP7/AwALAAYAAAAAAP//AwALAAYAAAAAAAAAAwALAAYAAAAAAAEAAwALAAYAAAAAAAIAAwALAAYAAAAAAAMAAwALAAYAAAAAAAQAAwALAAgAAAABAP3/AwALAAgAADABAP7/AwALAAYAAAABAP//AwALAAYAAAABAAAAAwALAAYAAAABAAEAAwALAAYAAAABAAIAAwALAAYAAAABAAMAAwALAAYAAAABAAQAAwALAAgAAAACAP3/AwAKAAgAADACAP7/AwALAAYAAAACAP//AwALAAYAAAACAAAAAwALAAYAAAACAAEAAwALAAYAAAACAAIAAwALAAYAAAACAAMAAwALAAYAAAACAAQAAwAMAAgAAAADAP3/AwAHAAYAAAADAP7/AwAMAAgAAGADAP//AwALAAgAAGADAAAAAwALAAgAAGADAAEAAwALAAgAAGADAAIAAwALAAgAAGADAAMAAwAKAAgAAGADAAQAAwAHAAQAAAAEAP7/AwALAAYAAAAEAP//AwALAAYAAAAEAAAAAwALAAYAAAAEAAEAAwALAAYAAAAEAAIAAwALAAYAAAAEAAMAAwALAAYAAAAEAAQAAwALAAYAAAAEAP3/AwALAAYAAAD8/wIAAAACAAIAAAD3//7/AAACAAIAAAA=")
+tile_map_data = PackedByteArray("AAD2//3/AAADAAcAAAD2//7/AAADAAIAAAD2////AAADAAIAAAD4/wQAAAACAAEAAAD5/wQAAAACAAEAAAD6/wQAAAACAAEAAAD7/wQAAAACAAEAAAD8/wQAAAACAAEAAAD8//3/AAACAAMAAAD7//3/AAACAAMAAAD6//3/AAACAAMAAAD5//3/AAACAAMAAAD4//3/AAACAAMAAAD3//3/AAACAAMAAAD2/wAAAAADAAIAAAD2/wEAAAADAAIAAAD2/wIAAAADAAIAAAD2/wMAAAADAAIAAAD2/wQAAAADAAUAAAD3/wQAAAACAAEAAAD9//3/AwALAAgAADD9//7/AwALAAYAAAD9////AwALAAYAAAD9/wAAAwALAAYAAAD9/wEAAwALAAYAAAD9/wIAAwALAAYAAAD9/wMAAwAGAAcAADD9/wQAAwALAAgAAAD+//3/AwALAAgAADD+//7/AwALAAYAAAD+////AwALAAYAAAD+/wAAAwALAAYAAAD+/wEAAwALAAYAAAD+/wIAAwALAAYAAAD+/wMAAwAFAAcAADD+/wQAAwALAAgAAAD///3/AwALAAgAADD///7/AwALAAYAAAD/////AwALAAYAAAD//wAAAwALAAYAAAD//wEAAwALAAYAAAD//wIAAwALAAYAAAD//wMAAwAFAAcAADD//wQAAwALAAgAAAAAAP3/AwALAAgAADAAAP7/AwALAAYAAAAAAP//AwALAAYAAAAAAAAAAwALAAYAAAAAAAEAAwALAAYAAAAAAAIAAwALAAYAAAAAAAMAAwAFAAcAADAAAAQAAwALAAgAAAABAP3/AwALAAgAADABAP7/AwALAAYAAAABAP//AwALAAYAAAABAAAAAwALAAYAAAABAAEAAwALAAYAAAABAAIAAwALAAYAAAABAAMAAwAFAAcAADABAAQAAwALAAgAAAACAP3/AwAKAAgAADACAP7/AwALAAYAAAACAP//AwALAAYAAAACAAAAAwALAAYAAAACAAEAAwALAAYAAAACAAIAAwALAAYAAAACAAMAAwAEAAcAADACAAQAAwAMAAgAAAADAP3/AwAHAAYAAAADAP7/AwAMAAgAAGADAP//AwALAAgAAGADAAAAAwALAAgAAGADAAEAAwALAAgAAGADAAIAAwALAAgAAGADAAMAAwAKAAgAAGADAAQAAwAHAAQAAAAEAP7/AwALAAYAAAAEAP//AwALAAYAAAAEAAAAAwALAAYAAAAEAAEAAwALAAYAAAAEAAIAAwALAAYAAAAEAAMAAwALAAYAAAAEAAQAAwALAAYAAAAEAP3/AwALAAYAAAD8/wIAAAACAAIAAAD3//7/AAACAAIAAAD4//7/AAACAAYAAAD3/wMAAAACAAYAAAD4/wMAAAACAAYAAAD5/wMAAAACAAYAAAD6/wMAAAACAAYAAAD7/wMAAAACAAYAAAD8/wMAAAACAAYAAAA=")
 tile_set = SubResource("TileSet_g8i7c")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=577545474]
@@ -1158,15 +1203,15 @@ anchor_top = 0.3
 anchor_right = 0.49800003
 anchor_bottom = 0.3
 offset_left = -238.16801
-offset_top = -57.5
+offset_top = -50.5
 offset_right = 237.83199
-offset_bottom = 57.50003
+offset_bottom = 64.50003
 grow_horizontal = 2
 theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 9
 theme_override_fonts/font = ExtResource("12_g8i7c")
-theme_override_font_sizes/font_size = 150
+theme_override_font_sizes/font_size = 128
 text = "Play"
 horizontal_alignment = 1
 
@@ -1180,7 +1225,7 @@ anchor_bottom = 0.504
 offset_left = -325.536
 offset_top = 124.40799
 offset_right = -235.53601
-offset_bottom = 219.40799
+offset_bottom = 217.40799
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
@@ -1196,6 +1241,58 @@ texture = ExtResource("13_5ti5v")
 position = Vector2(44.000015, 45)
 scale = Vector2(3.8, 3.8)
 sprite_frames = SubResource("SpriteFrames_rc6uw")
+
+[node name="Documentation" type="Button" parent="CanvasLayer" unique_id=2095092835]
+z_index = 5
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -393.536
+offset_top = 170.40799
+offset_right = -345.536
+offset_bottom = 218.40799
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Documentation" unique_id=908489160]
+position = Vector2(24, 24)
+texture = ExtResource("13_5ti5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Documentation" unique_id=1657838320]
+position = Vector2(24.000015, 23)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_l6llh")
+
+[node name="Levels" type="Button" parent="CanvasLayer" unique_id=1931127875]
+z_index = 5
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 347.464
+offset_top = 170.40799
+offset_right = 395.464
+offset_bottom = 218.40799
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/Levels" unique_id=1461847394]
+position = Vector2(24, 24)
+texture = ExtResource("13_5ti5v")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Levels" unique_id=1160693324]
+position = Vector2(24.000015, 23)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_jbv25")
 
 [node name="Settings" type="Button" parent="CanvasLayer" unique_id=1933539584]
 z_index = 5
@@ -1240,8 +1337,798 @@ theme_override_constants/line_spacing = 3
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 3
 theme_override_fonts/font = ExtResource("12_g8i7c")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 32
 text = "© 2026 3maar. Do not distribute!"
+
+[node name="LevelsGroup" type="Node" parent="CanvasLayer" unique_id=633185327]
+
+[node name="levelist" type="ColorRect" parent="CanvasLayer/LevelsGroup" unique_id=1113288502]
+visible = false
+anchors_preset = -1
+anchor_left = 0.42200002
+anchor_top = 0.57900006
+anchor_right = 0.42200002
+anchor_bottom = 0.57900006
+offset_left = -167.14401
+offset_top = -138.19205
+offset_right = 148.85599
+offset_bottom = 124.80795
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.47058824)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=669391076]
+position = Vector2(310, 6)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=938804271]
+position = Vector2(310, 133)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1921852041]
+position = Vector2(-12, 131)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=375288248]
+position = Vector2(156.70396, 257)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1163934415]
+position = Vector2(159.99998, -12)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=2056148248]
+position = Vector2(310, 257)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1324688420]
+position = Vector2(6, 257)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1862393876]
+position = Vector2(6, 6)
+rotation = 4.712389
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist" unique_id=71420310]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -259.974
+offset_top = -83.3
+offset_right = 275.026
+offset_bottom = -36.300003
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "Levels"
+horizontal_alignment = 1
+
+[node name="1" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=409964382]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -118.088
+offset_top = -79.552
+offset_right = -70.088
+offset_bottom = -31.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/1" unique_id=1197109807]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/1" unique_id=1426416174]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "1"
+horizontal_alignment = 1
+
+[node name="2" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=211187342]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -58.087997
+offset_top = -79.552
+offset_right = -10.087997
+offset_bottom = -31.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/2" unique_id=1291149935]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/2" unique_id=1987151317]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "2
+"
+horizontal_alignment = 1
+
+[node name="3" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=507792502]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 1.9120026
+offset_top = -79.552
+offset_right = 49.912003
+offset_bottom = -31.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/3" unique_id=510932207]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/3" unique_id=127947604]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "3"
+horizontal_alignment = 1
+
+[node name="4" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=832286499]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 61.912003
+offset_top = -79.552
+offset_right = 109.912
+offset_bottom = -31.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/4" unique_id=2045074082]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/4" unique_id=1039576204]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "4"
+horizontal_alignment = 1
+
+[node name="5" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=994069358]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 121.912
+offset_top = -79.552
+offset_right = 169.912
+offset_bottom = -31.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/5" unique_id=580872684]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/5" unique_id=1283470787]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "5
+"
+horizontal_alignment = 1
+
+[node name="6" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1128845410]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -118.088
+offset_top = -18.552002
+offset_right = -70.08799
+offset_bottom = 29.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/6" unique_id=1634815068]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/6" unique_id=620553190]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "6
+"
+horizontal_alignment = 1
+
+[node name="7" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=131603261]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -58.087997
+offset_top = -18.552002
+offset_right = -10.087997
+offset_bottom = 29.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/7" unique_id=206888592]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/7" unique_id=1798561286]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "7
+"
+horizontal_alignment = 1
+
+[node name="8" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=1228196874]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 1.9120026
+offset_top = -19.552002
+offset_right = 49.912003
+offset_bottom = 28.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/8" unique_id=1539452773]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/8" unique_id=1876494221]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "8"
+horizontal_alignment = 1
+
+[node name="9" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=831813737]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 61.912003
+offset_top = -19.552002
+offset_right = 109.912
+offset_bottom = 28.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/9" unique_id=1976702845]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/9" unique_id=1858504269]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "9"
+horizontal_alignment = 1
+
+[node name="10" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=858903367]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 121.912
+offset_top = -19.552002
+offset_right = 169.912
+offset_bottom = 28.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/10" unique_id=730353345]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/10" unique_id=5701636]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -18.904001
+offset_top = -25.399994
+offset_right = 23.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "10"
+horizontal_alignment = 1
+
+[node name="11" type="Button" parent="CanvasLayer/LevelsGroup/levelist" unique_id=465849779]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = 121.912
+offset_top = 65.448
+offset_right = 169.912
+offset_bottom = 113.448
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/LevelsGroup/levelist/11" unique_id=1212081289]
+position = Vector2(24, 24)
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("13_5ti5v")
+
+[node name="Label2" type="Label" parent="CanvasLayer/LevelsGroup/levelist/11" unique_id=739512140]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -16.904001
+offset_top = -1.399993
+offset_right = 25.360006
+offset_bottom = 27.700012
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("17_rc6uw")
+theme_override_font_sizes/font_size = 16
+text = "?"
+horizontal_alignment = 1
+
+[node name="DocumGroup" type="Node" parent="CanvasLayer" unique_id=475405592]
+
+[node name="docs" type="ColorRect" parent="CanvasLayer/DocumGroup" unique_id=1314002986]
+visible = false
+anchors_preset = -1
+anchor_left = 0.42200002
+anchor_top = 0.57900006
+anchor_right = 0.42200002
+anchor_bottom = 0.57900006
+offset_left = -167.14401
+offset_top = -138.19205
+offset_right = 148.85599
+offset_bottom = 124.80795
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.012617188, 0.012617188, 0.012617188, 0.47058824)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=1156141267]
+position = Vector2(310, 6)
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=252933167]
+position = Vector2(310, 133)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=884174550]
+position = Vector2(-12, 131)
+scale = Vector2(3, 13.124999)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=1737520939]
+position = Vector2(156.70396, 257)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=138089387]
+position = Vector2(159.99998, -12)
+rotation = 1.5707964
+scale = Vector2(3, 16.412003)
+sprite_frames = SubResource("SpriteFrames_owyel")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=2099908661]
+position = Vector2(310, 257)
+rotation = 1.5707964
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=805859539]
+position = Vector2(6, 257)
+rotation = 3.1415927
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs" unique_id=1281201010]
+position = Vector2(6, 6)
+rotation = 4.712389
+scale = Vector2(3, 3)
+sprite_frames = SubResource("SpriteFrames_1by5w")
+
+[node name="Label2" type="Label" parent="CanvasLayer/DocumGroup/docs" unique_id=1939372154]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -259.974
+offset_top = -83.3
+offset_right = 275.026
+offset_bottom = -36.300003
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "Docs & Hints"
+horizontal_alignment = 1
+
+[node name="Readme" type="Button" parent="CanvasLayer/DocumGroup/docs" unique_id=568421846]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -107.08801
+offset_top = -69.552
+offset_right = 158.912
+offset_bottom = -14.552002
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+icon_alignment = 1
+
+[node name="1" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Readme" unique_id=1905986312]
+position = Vector2(262.552, 26.95996)
+scale = Vector2(1.5, 1.448)
+sprite_frames = SubResource("SpriteFrames_kmwmt")
+
+[node name="2" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Readme" unique_id=645730576]
+position = Vector2(133.53598, 26.95996)
+scale = Vector2(14.808004, 1.449)
+sprite_frames = SubResource("SpriteFrames_dldpb")
+
+[node name="3" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Readme" unique_id=1336358615]
+position = Vector2(4.5519714, 26.95996)
+scale = Vector2(1.5, 1.449)
+sprite_frames = SubResource("SpriteFrames_3p34a")
+
+[node name="Label2" type="Label" parent="CanvasLayer/DocumGroup/docs/Readme" unique_id=1242384444]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -233.916
+offset_top = -29.540009
+offset_right = 242.08394
+offset_bottom = 85.46002
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "Github readme"
+horizontal_alignment = 1
+
+[node name="Walkthrough" type="Button" parent="CanvasLayer/DocumGroup/docs" unique_id=1345980355]
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.418
+anchor_top = 0.504
+anchor_right = 0.418
+anchor_bottom = 0.504
+offset_left = -107.08801
+offset_top = -0.55200195
+offset_right = 158.912
+offset_bottom = 54.447998
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 1
+icon_alignment = 1
+
+[node name="1" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Walkthrough" unique_id=1836266745]
+position = Vector2(262.552, 26.95996)
+scale = Vector2(1.5, 1.448)
+sprite_frames = SubResource("SpriteFrames_kmwmt")
+
+[node name="2" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Walkthrough" unique_id=901637143]
+position = Vector2(133.53598, 26.95996)
+scale = Vector2(14.808004, 1.449)
+sprite_frames = SubResource("SpriteFrames_dldpb")
+
+[node name="3" type="AnimatedSprite2D" parent="CanvasLayer/DocumGroup/docs/Walkthrough" unique_id=1677049015]
+position = Vector2(4.5519714, 26.95996)
+scale = Vector2(1.5, 1.449)
+sprite_frames = SubResource("SpriteFrames_3p34a")
+
+[node name="Label2" type="Label" parent="CanvasLayer/DocumGroup/docs/Walkthrough" unique_id=1019605296]
+z_index = 4
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49800003
+anchor_top = 0.3
+anchor_right = 0.49800003
+anchor_bottom = 0.3
+offset_left = -233.916
+offset_top = -29.540009
+offset_right = 242.08394
+offset_bottom = 85.46002
+grow_horizontal = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 9
+theme_override_fonts/font = ExtResource("12_g8i7c")
+theme_override_font_sizes/font_size = 64
+text = "Walkthrough"
+horizontal_alignment = 1
 
 [node name="SettingsGroup" type="Node" parent="CanvasLayer" unique_id=545632682]
 
@@ -1380,7 +2267,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("12_g8i7c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "master volume"
 horizontal_alignment = 1
 
@@ -1402,7 +2289,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("12_g8i7c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "SFX"
 horizontal_alignment = 1
 
@@ -1424,7 +2311,7 @@ theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 0
 theme_override_constants/shadow_offset_y = 4
 theme_override_fonts/font = ExtResource("12_g8i7c")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 32
 text = "Background music"
 horizontal_alignment = 1
 
@@ -1436,7 +2323,22 @@ bus = &"BGM"
 
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="CanvasLayer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Documentation" to="." method="_on_documentation_pressed"]
+[connection signal="pressed" from="CanvasLayer/Levels" to="." method="_on_levels_pressed"]
 [connection signal="pressed" from="CanvasLayer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/1" to="." method="_on_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/2" to="." method="_on_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/3" to="." method="_on_3_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/4" to="." method="_on_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/5" to="." method="_on_5_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/6" to="." method="_on_6_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/7" to="." method="_on_7_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/8" to="." method="_on_8_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/9" to="." method="_on_9_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/10" to="." method="_on_10_pressed"]
+[connection signal="pressed" from="CanvasLayer/LevelsGroup/levelist/11" to="." method="_on_sp_pressed"]
+[connection signal="pressed" from="CanvasLayer/DocumGroup/docs/Readme" to="." method="_on_readme_pressed"]
+[connection signal="pressed" from="CanvasLayer/DocumGroup/docs/Walkthrough" to="." method="_on_walkthrough_pressed"]
 [connection signal="pressed" from="CanvasLayer/SettingsGroup/Back" to="." method="_on_back_pressed"]
 [connection signal="value_changed" from="CanvasLayer/SettingsGroup/options" to="." method="_on_options_value_changed"]
 [connection signal="value_changed" from="CanvasLayer/SettingsGroup/options/HSlider2" to="." method="_on_h_slider_2_value_changed"]
