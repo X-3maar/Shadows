@@ -8,7 +8,7 @@ WASD - arrows to move around, space to jump and q/shift to dash!
 That's all the controls until now, there will be more abilities in this game with more controls so stay tuned for the next part.
 Note: Some controls may not be mentioned here and the user will explore it in the game after gaining abilities.
 ## How to pass each level
-For a better experience, do not read anything under this line before you give up anad don't know how to pass a specific level.
+For a better experience, do not read anything under this line before you give up passing a specific level.
 ### Level 1
 Collect the dark core, dash to pass to go through the white barrier
 ### Level 2
