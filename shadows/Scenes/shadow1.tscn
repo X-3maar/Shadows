@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://b0nc1vnell0q6"]
+
+[ext_resource type="Texture2D" uid="uid://v4owcgfkkyir" path="res://Assets/Images/Player/16x32/16x32 Idle-Shade.png" id="1_txpo7"]
+[ext_resource type="AudioStream" uid="uid://cwma7hjk38b5e" path="res://Assets/Audio/Dark_Core_SFX.mp3" id="2_hheja"]
+[ext_resource type="Texture2D" uid="uid://ddbaykwkngp3r" path="res://Assets/111.png" id="3_hheja"]
+
+[sub_resource type="Gradient" id="Gradient_wjdoq"]
+offsets = PackedFloat32Array(0.31012657, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8pobm"]
+gradient = SubResource("Gradient_wjdoq")
+fill = 1
+fill_from = Vector2(0.507874, 0.47637796)
+fill_to = Vector2(0.8228347, 0.16141732)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rxdv1"]
+atlas = ExtResource("1_txpo7")
+region = Rect2(0, 64, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nlsre"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rxdv1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Player" type="CharacterBody2D" unique_id=1800369328]
+scale = Vector2(3, 3)
+collision_layer = 2
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=472482744]
+modulate = Color(1, 1, 1, 0.6392157)
+texture = SubResource("GradientTexture2D_8pobm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1596936119]
+modulate = Color(1.1480727, 1.1480727, 1.1480727, 1)
+texture_filter = 1
+position = Vector2(0.33333334, -6.3333335)
+sprite_frames = SubResource("SpriteFrames_nlsre")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.01217481
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=592826793]
+polygon = PackedVector2Array(-3, -14, 3, -14, 3.6666667, -12.333334, 3.6666667, -6.3333335, 2.6666667, -3.3333335, 2.3333335, 3.3333335, -0.33333334, 8, -1.3333334, 7.666667, -1.6666667, 5.666667, -2.6666667, 4, -2.3333335, -3.3333335, -4.666667, -6, -4.3333335, -12.333334)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1822736585]
+stream = ExtResource("2_hheja")
+volume_db = 11.085
+
+[node name="eyes" type="Sprite2D" parent="." unique_id=348728538]
+modulate = Color(1, 0, 0, 1)
+self_modulate = Color(1, 0, 0, 1)
+position = Vector2(2.8333335, -7.8333335)
+scale = Vector2(0.014285716, 0.020833328)
+texture = ExtResource("3_hheja")

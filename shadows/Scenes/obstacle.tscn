@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://csyhcw7258gga"]
+
+[ext_resource type="Script" uid="uid://dntd2kwg2kqri" path="res://Scripts/obstacle.gd" id="1_2p81s"]
+[ext_resource type="Texture2D" uid="uid://d15pfo6dhf383" path="res://Assets/Images/Tilemap/monochrome_tilemap_transparent.png" id="1_15o2q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2p81s"]
+atlas = ExtResource("1_15o2q")
+region = Rect2(221, 85, 16, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvx1i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2p81s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rvx1i"]
+size = Vector2(14, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2p81s"]
+size = Vector2(4, 40)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" unique_id=243130036]
+script = ExtResource("1_2p81s")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." unique_id=350427362]
+position = Vector2(5.83991e-06, -128.80078)
+rotation = 3.1415927
+scale = Vector2(1, 3.6720314)
+sprite_frames = SubResource("SpriteFrames_rvx1i")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." unique_id=679194581]
+position = Vector2(5.83991e-06, 95.19921)
+scale = Vector2(1, 3.6720314)
+sprite_frames = SubResource("SpriteFrames_rvx1i")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1433048500]
+z_index = 12
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=853913497]
+position = Vector2(0, -129)
+shape = SubResource("RectangleShape2D_rvx1i")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=521930703]
+position = Vector2(0, 95)
+shape = SubResource("RectangleShape2D_rvx1i")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=2087131581]
+collision_layer = 1024
+collision_mask = 1024
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=1014629202]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_2p81s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

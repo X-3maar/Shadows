@@ -10,3 +10,4 @@ var cnswitch = false
 var switch = true
 var keys = 0
 var temp = false
+var score = 0
